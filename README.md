@@ -33,27 +33,42 @@ This guide describes how to deploy the TaskBoard ASP.NET Core (.NET 8) applicati
 4. Click **Review + Create**, then **Create**.
 5. Wait for deployment to finish and click **Go to resource**.
 
+![Create Web App + Database Compleated](docs/images/Create-Web-App-Compleated.png)
+
 ---
 
 ## Step 3: Set Up Database Connectivity
 
-1. In your App Service, go to **Configuration** > **Connection strings**.
+1. In your App Service, go to **Settings** > **Environment variables**>**Connection strings**.
 2. Find the generated MySQL connection string.
-3. **Rename** the connection string to match your app's configuration, e.g., `DefaultConnection`.
-4. The connection string should look like:
-   ```
-   Server=<your-server>.mysql.database.azure.com;Port=3306;Database=<your-database>;User Id=<user>@<your-server>;Password=<password>;SslMode=Required;
-   ```
-5. **Save** the configuration.
+
+![Web App Engine and Hosting plan](docs/images/settings.png)
+
+3. **Rename** the connection string to match your app's configuration in TaskBoard.WebApp\appsettings.json, e.g., `DefaultConnection`.
+
+![Connection string name](docs/images/connection-string-name.png)
+
+4. **Apply** the configuration.
 
 ---
 
 ## Step 4: Deploy Code from GitHub
 
-1. In your App Service, go to **Deployment Center**.
-2. For **Source**, choose **GitHub** and sign in.
+1. In your App Service, go to **Deployment**.
+2. From **Deployment Center**>**Settings**, choose **Source**>**GitHub** and sign in.
+
+![Deployment Center](docs/images/deployment-center.png)
+
 3. Select your organization, repository, and branch.
+
+![Github setting](docs/images/github-sign-in.png)
+
 4. Click **Save**.
+
+
+![Github setting save](docs/images/save.png)
+
+
 5. Azure will set up a GitHub Actions workflow to build and deploy your app automatically.
 
 ---
@@ -63,23 +78,10 @@ This guide describes how to deploy the TaskBoard ASP.NET Core (.NET 8) applicati
 1. After deployment, go to **Overview** in your App Service.
 2. Click the URL to open your app:  
    `https://<app-name>.azurewebsites.net`
+
+![Ready](docs/images/ready.png)
+
 3. Your TaskBoard app should now be live and connected to the Azure MySQL database.
 
 ---
 
-## Notes
-
-- The app uses `Database.EnsureCreated()` or `Database.Migrate()` to initialize the database schema automatically on first run.
-- If you want to manage migrations manually, see the [EF Core migration documentation](https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/).
-- For production, always use strong passwords and restrict database access as much as possible.
-
----
-
-## Troubleshooting
-
-- **Connection errors:**  
-  - Ensure the connection string in Azure matches the one in your `appsettings.json` (`DefaultConnection`).
-  - Check that your Web App can access the MySQL server (VNet or public access).
-- **SSL errors:**  
-  - Use `SslMode=Required` in the connection string.
-  - No need to specify `SslCa` in Azure App Service.
