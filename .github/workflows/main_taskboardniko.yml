@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core app to Azure Web App - mytaskbarapp
+name: Build and deploy ASP.Net Core app to Azure Web App - TaskBoardNiko
 
 on:
   push:
@@ -51,15 +51,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_EF0A5A55C81346BC80AD40FF14043AB5 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_75221476724C4C8BB56C4DEC92272C7D }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C80D5573F37E4071B3F5DF261AD0CB22 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_0CD6BF8E07314C1CAA68D5D0EFC02451 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_AE02EFEE14CA467C82DAE8B3DE5167A2 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_66AF0CD992AA4AACB1332A2D26192D2F }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'mytaskbarapp'
+          app-name: 'TaskBoardNiko'
           slot-name: 'Production'
           package: .
           
