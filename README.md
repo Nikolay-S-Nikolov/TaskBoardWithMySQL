@@ -10,7 +10,7 @@ This guide describes how to deploy the TaskBoard ASP.NET Core (.NET 8) applicati
 ## Step 1: Upload Project to GitHub
 
 1. Push your TaskBoard project code to a new GitHub repository.
-2. Make sure your repository contains all necessary files, including the `.csproj`, `Dockerfile`, and `appsettings.json`.
+2. Make sure your repository contains all necessary files, including the `.csproj` and `appsettings.json`.
 
 ---
 
@@ -18,15 +18,18 @@ This guide describes how to deploy the TaskBoard ASP.NET Core (.NET 8) applicati
 
 1. Log in to the [Azure Portal](https://portal.azure.com).
 2. In the search bar, type **Web App + Database** and select it from the Marketplace.
+![Create Web App + Database](docs/images/Create-Web-App.png)
 3. On the "Create Web App + Database" page:
    - **Subscription:** Leave as default.
    - **Resource Group:** Create a new one, e.g., `TaskBoardResourceGroup`.
    - **Region:** Choose a region near you (e.g., West US 3).
    - **Web App Name:** Set a unique name, e.g., `TaskBoardYourName`.
    - **Runtime Stack:** Select **.NET 8 (LTS)**.
+![Web App Group,Region, Name and Stack](docs/images/Create-Web-App-Name.png)
    - **Database Engine:** Choose **MySQL** (not SQL Azure).
    - **Server and Database Names:** Set as desired.
    - **Hosting Plan:** Choose "Basic" or as needed.
+![Web App Engine and Hosting plan](docs/images/Create-Web-App-SQL.png)
 4. Click **Review + Create**, then **Create**.
 5. Wait for deployment to finish and click **Go to resource**.
 
