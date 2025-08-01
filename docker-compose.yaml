@@ -1,23 +1,28 @@
 version: "3.8"
 
 services: 
-    sqlserver:
-        container_name: sqlserver
-        image: mcr.microsoft.com/mssql/server
-        ports: 
-            - "1433:1433"
-        environment:
-            - ACCEPT_EULA=Y
-            - MSSQL_SA_PASSWORD=yourStrongPassword12#
-        volumes: 
-            - sqldata:/var/opt/mssql
-    web-app:
-        container_name: web-app
-        build:
-            dockerfile: ./TaskBoard.WebApp/Dockerfile
-        ports: 
-            - "5000:80"
-        restart: on-failure
+  mysql:
+    container_name: mysql
+    image: mysql:8.0
+    ports: 
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=yourStrongPassword12#
+      - MYSQL_DATABASE=taskboarddb
+      - MYSQL_USER=taskboarduser
+      - MYSQL_PASSWORD=yourStrongPassword12#
+    volumes: 
+      - mysqldata:/var/lib/mysql
+
+  web-app:
+    container_name: web-app
+    build:
+      dockerfile: ./TaskBoard.WebApp/Dockerfile
+    ports: 
+      - "5000:80"
+    restart: on-failure
+    depends_on:
+      - mysql
 
 volumes:
-    sqldata:
+  mysqldata:
