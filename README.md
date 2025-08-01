@@ -21,7 +21,7 @@ This guide describes how to deploy the TaskBoard ASP.NET Core (.NET 8) applicati
 3. On the "Create Web App + Database" page:
    - **Subscription:** Leave as default.
    - **Resource Group:** Create a new one, e.g., `TaskBoardResourceGroup`.
-   - **Region:** Choose a region near you (e.g., West Europe).
+   - **Region:** Choose a region near you (e.g., West US 3).
    - **Web App Name:** Set a unique name, e.g., `TaskBoardYourName`.
    - **Runtime Stack:** Select **.NET 8 (LTS)**.
    - **Database Engine:** Choose **MySQL** (not SQL Azure).
