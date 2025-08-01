@@ -19,7 +19,7 @@ services:
     build:
       dockerfile: ./TaskBoard.WebApp/Dockerfile
     ports: 
-      - "5000:80"
+      - "5000:8080"
     restart: on-failure
     depends_on:
       - mysql
