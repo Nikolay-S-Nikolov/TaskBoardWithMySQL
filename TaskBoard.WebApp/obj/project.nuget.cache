@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OVSrkeon4Ng=",
+  "dgSpecHash": "G3BmrCD9rGQ=",
   "success": true,
-  "projectFilePath": "D:\\Nikolay\\SoftUni\\Containers-and-Cloud-юли-2025\\08-Exercise-Cloud-Computing\\Resources\\TaskBoard\\TaskBoard.WebApp\\TaskBoard.WebApp.csproj",
+  "projectFilePath": "D:\\Nikolay\\SoftUni\\Containers-and-Cloud-юли-2025\\08-Exercise-Cloud-Computing\\Resources\\TaskBoardWithMySQL\\TaskBoard.WebApp\\TaskBoard.WebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
