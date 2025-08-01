@@ -43,10 +43,6 @@ This guide describes how to deploy the TaskBoard ASP.NET Core (.NET 8) applicati
    ```
 5. **Save** the configuration.
 
-> **Note:**  
-> - You do **not** need to add `SslCa` in Azure App Service; `SslMode=Required` is enough.
-> - Make sure your Web App has access to the MySQL server (either via VNet integration or public access with allowed IPs).
-
 ---
 
 ## Step 4: Deploy Code from GitHub
